@@ -1,6 +1,7 @@
 <?php
 
+use App\Livewire\Dashboard;
 use App\Livewire\MovieList;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', MovieList::class)->name('movies.index');
+Route::get('/', Dashboard::class)->name('movies.index');
