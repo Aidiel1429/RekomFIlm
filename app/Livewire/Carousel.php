@@ -24,7 +24,7 @@ class Carousel extends Component
 
             $discover = collect($resDiscover->json()['results'] ?? [])->take(5);
 
-            $resGenre = Http::get(env('TMDB_BASE_URL') . '/genre/movie/list?language=en', [
+            $resGenre = Http::get(env('TMDB_BASE_URL') . '/genre/movie/list', [
                 'api_key' => env('TMDB_API_KEY'),
             ]);
 

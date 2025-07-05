@@ -18,7 +18,7 @@ class TopRated extends Component
     public function fetchTopRated()
     {
         $this->topRateds = Cache::remember('top_rated', 3600, function () {
-            $resTopRated = Http::get(env('TMDB_BASE_URL') . '/movie/top_rated?language=en-US&page=1', [
+            $resTopRated = Http::get(env('TMDB_BASE_URL') . '/movie/top_rated', [
                 'api_key' => env('TMDB_API_KEY'),
             ]);
 

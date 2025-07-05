@@ -8,8 +8,16 @@
         <div class="mt-5">
             <livewire:now-playing />
         </div>
-        <div class="mt-5">
-            <livewire:trending-celebrities />
+        <div class="mt-5 lg:flex lg:gap-5 xl:gap-10 w-full max-h-[500px] overflow-hidden">
+            <div class="hidden lg:block lg:w-2/3">
+                <livewire:upcoming />
+            </div>
+            <div class="lg:w-1/3">
+                <livewire:trending-celebrities />
+            </div>
+            <div class="block lg:hidden lg:w-2/3">
+                <livewire:upcoming />
+            </div>
         </div>
     </div>
 </div>

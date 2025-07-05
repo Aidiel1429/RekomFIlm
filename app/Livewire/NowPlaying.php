@@ -18,7 +18,7 @@ class NowPlaying extends Component
     public function fetchNowPlaying()
     {
         $this->listNowPlayings = Cache::remember('list_now_playing', 3600, function () {
-            $resNowPlaying = Http::get(env('TMDB_BASE_URL') . '/movie/now_playing?language=en-US&page=1', [
+            $resNowPlaying = Http::get(env('TMDB_BASE_URL') . '/movie/now_playing', [
                 'api_key' => env('TMDB_API_KEY'),
             ]);
 

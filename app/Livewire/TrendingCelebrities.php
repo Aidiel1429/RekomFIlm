@@ -18,7 +18,7 @@ class TrendingCelebrities extends Component
     public function fetchTrendingCelebrities()
     {
         $this->trendingCelebrities = Cache::remember('trending_celebrities', 3600, function () {
-            $res = Http::get(env('TMDB_BASE_URL') . '/person/popular?language=en-US&page=1', [
+            $res = Http::get(env('TMDB_BASE_URL') . '/person/popular', [
                 'api_key' => env('TMDB_API_KEY'),
             ]);
 
