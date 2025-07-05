@@ -52,12 +52,17 @@
         .custom-scroll::-webkit-scrollbar-thumb:active {
             background-color: #FFA500;
         }
+
+        .bg-dots-pattern {
+            background-image: radial-gradient(#3d3d3d20 1px, transparent 1px);
+            background-size: 10px 10px;
+        }
     </style>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-black text-[#E0E0E0] font-[Figtree]">
+<body class="bg-black bg-dots-pattern text-[#E0E0E0] font-[Figtree]">
     {{ $slot }}
 </body>
 

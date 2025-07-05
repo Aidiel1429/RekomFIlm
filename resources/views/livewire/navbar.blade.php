@@ -15,8 +15,8 @@
                 </button>
             </div>
             <div class="hidden md:flex gap-5 font-medium">
-                <a href="/" wire:navigate class="hover:text-[#FFA500] transition">Home</a>
-                <a href="#" class="hover:text-[#FFA500] transition">Genres</a>
+                <a href="/" wire:navigate class="hover:text-[#FFA500] transition">Movies</a>
+                <a href="#" class="hover:text-[#FFA500] transition">Tv</a>
                 <a href="#" class="hover:text-[#FFA500] transition">Top Rated</a>
                 <a href="#" class="hover:text-[#FFA500] transition">Trending</a>
             </div>
@@ -41,8 +41,8 @@
         </div>
 
         <div class="flex flex-col items-center justify-center h-[80%] text-2xl space-y-6">
-            <a href="/" wire:navigate class="hover:text-[#FFA500] transition">Home</a>
-            <a href="#" class="hover:text-[#FFA500] transition">Genres</a>
+            <a href="/" wire:navigate class="hover:text-[#FFA500] transition">Movies</a>
+            <a href="#" class="hover:text-[#FFA500] transition">Tv</a>
             <a href="#" class="hover:text-[#FFA500] transition">Top Rated</a>
             <a href="#" class="hover:text-[#FFA500] transition">Trending</a>
         </div>

@@ -16,9 +16,9 @@
             <div class="w-full flex-shrink-0 relative bg-center bg-cover h-64 sm:h-80 md:h-96 lg:h-[481px] xl:h-[681px]"
                 style="background-image: url('{{ env('TMDB_IMAGE_BASE_URL') }}{{ $carousel['backdrop_path'] }}');">
 
-                <div class="absolute inset-0 bg-black/70"></div>
+                <div class="absolute inset-0 bg-black/70 bg-dots-pattern"></div>
 
-                <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent z-10 "></div>
 
                 <div
                     class="relative z-10 flex flex-col justify-end h-full w-full px-5 py-5 text-xl font-medium md:py-10 lg:justify-center md:container md:mx-auto lg:px-10 xl:px-14">
