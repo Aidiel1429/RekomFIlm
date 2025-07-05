@@ -24,19 +24,19 @@ class Carousel extends Component
 
             $discover = collect($resDiscover->json()['results'] ?? [])->take(5);
 
-            $enriched = $discover->map(function ($movie) {
-                $resGenre = Http::get(env('TMDB_BASE_URL') . '/movie/' . $movie['id'] . '?language=en-US', [
-                    'api_key' => env('TMDB_API_KEY'),
-                ]);
+            $resGenre = Http::get(env('TMDB_BASE_URL') . '/genre/movie/list?language=en', [
+                'api_key' => env('TMDB_API_KEY'),
+            ]);
 
-                $genres = $resGenre->json()['genres'] ?? [];
+            $genresMap = collect($resGenre->json('genres', []))->mapWithKeys(fn($genre) => [$genre['id'] => $genre['name']]);
 
-                $movie['genre'] = collect($genres)->pluck('name')->implode(', ');
+            $enriched = $discover->map(function ($movie) use ($genresMap) {
+                $movie['genre'] = collect($movie['genre_ids'])->map(fn($id) => $genresMap[$id])->implode(', ');
 
                 return $movie;
             });
 
-            return $enriched;
+            return $enriched->values()->all();
         });
     }
 

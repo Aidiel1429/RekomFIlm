@@ -16,10 +16,12 @@
             <div class="w-full flex-shrink-0 relative bg-center bg-cover h-64 sm:h-80 md:h-96 lg:h-[481px] xl:h-[681px]"
                 style="background-image: url('{{ env('TMDB_IMAGE_BASE_URL') }}{{ $carousel['backdrop_path'] }}');">
 
-                <div class="absolute inset-0 bg-black/60"></div>
+                <div class="absolute inset-0 bg-black/70"></div>
+
+                <div class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent z-10"></div>
 
                 <div
-                    class="relative z-10 flex flex-col justify-end h-full w-full px-5 py-5 text-xl font-medium md:px-10 md:py-10 lg:justify-center lg:container lg:mx-auto lg:px-10 xl:px-14">
+                    class="relative z-10 flex flex-col justify-end h-full w-full px-5 py-5 text-xl font-medium md:py-10 lg:justify-center md:container md:mx-auto lg:px-10 xl:px-14">
                     <h1 class="text-white text-xl font-bold md:text-3xl xl:text-6xl">{{ $carousel['title'] }}</h1>
                     <div class="mt-2 flex gap-4 text-sm text-white md:text-base xl:text-xl">
                         <div class="flex items-center gap-2">

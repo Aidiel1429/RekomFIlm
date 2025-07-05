@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{{ $title ?? 'Sceneza - Find Your Next Favorite Film' }}</title>
+    <title>{{ $title ?? 'Sceneza - Movie Discovery App' }}</title>
 
     {{-- font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,6 +24,33 @@
             font-family: "ADLaM Display", system-ui;
             font-weight: 400;
             font-style: normal;
+        }
+
+        .custom-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
+        }
+
+        .custom-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .custom-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 9999px;
+            transition: background-color 0.3s ease;
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(255, 165, 0, 0.6);
+        }
+
+        .custom-scroll::-webkit-scrollbar-thumb:active {
+            background-color: #FFA500;
         }
     </style>
 
