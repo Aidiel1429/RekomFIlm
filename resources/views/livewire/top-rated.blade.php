@@ -8,7 +8,7 @@
                 <div
                     class="w-[150px] h-[360px] flex-shrink-0 snap-start rounded overflow-hidden cursor-pointer hover:bg-white/5 transition-all md:w-[200px] md:h-[420px] xl:h-[450px]">
                     <div class="w-full h-[225px] overflow-hidden md:h-[300px]">
-                        <img src="{{ env('TMDB_IMAGE_BASE_URL') }}{{ $item['poster_path'] }}"
+                        <img loading="lazy" src="{{ env('TMDB_IMAGE_BASE_URL') }}{{ $item['poster_path'] }}"
                             alt="poster {{ $item['title'] }}" class="w-full h-full object-cover object-top rounded-t">
                     </div>
                     <div class="p-2 text-white">

@@ -8,7 +8,7 @@
         <div class="mt-5">
             <livewire:now-playing />
         </div>
-        <div class="mt-5 lg:flex lg:gap-5 xl:gap-10 w-full max-h-[500px] overflow-hidden">
+        <div class="mt-5 lg:flex lg:gap-5 xl:gap-10 w-full lg:max-h-[500px] lg:overflow-hidden">
             <div class="hidden lg:block lg:w-2/3">
                 <livewire:upcoming />
             </div>

@@ -15,10 +15,20 @@
                 </button>
             </div>
             <div class="hidden md:flex gap-5 font-medium">
-                <a href="/" wire:navigate class="hover:text-[#FFA500] transition">Movies</a>
-                <a href="#" class="hover:text-[#FFA500] transition">Tv</a>
-                <a href="#" class="hover:text-[#FFA500] transition">Top Rated</a>
-                <a href="#" class="hover:text-[#FFA500] transition">Trending</a>
+                <a href="/movies" wire:navigate
+                    class="{{ request()->routeIs('movies') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                    Movies
+                </a>
+                <a href="/tv-series" wire:navigate
+                    class="{{ request()->routeIs('tv-series') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                    Tv Series
+                </a>
+                <a href="#" class="text-white hover:text-[#FFA500] transition">
+                    Top Rated
+                </a>
+                <a href="#" class="text-white hover:text-[#FFA500] transition">
+                    Trending
+                </a>
             </div>
             <div class="hidden md:block">
                 <input type="text" placeholder="Find a movie..."
@@ -41,8 +51,14 @@
         </div>
 
         <div class="flex flex-col items-center justify-center h-[80%] text-2xl space-y-6">
-            <a href="/" wire:navigate class="hover:text-[#FFA500] transition">Movies</a>
-            <a href="#" class="hover:text-[#FFA500] transition">Tv</a>
+            <a href="/movies" wire:navigate
+                class="{{ request()->routeIs('movies') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                Movies
+            </a>
+            <a href="/tv-series" wire:navigate
+                class="{{ request()->routeIs('tv-series') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                Tv Series
+            </a>
             <a href="#" class="hover:text-[#FFA500] transition">Top Rated</a>
             <a href="#" class="hover:text-[#FFA500] transition">Trending</a>
         </div>

@@ -9,9 +9,10 @@
                     class="flex flex-col justify-start text-center snap-start flex-shrink-0 w-[130px] h-[250px] lg:w-[150px] lg:h-[270px] xl:w-[180px] xl:h-[300px]">
                     <div
                         class="w-[130px] h-[130px] mx-auto overflow-hidden rounded-full border border-white/20 lg:w-[150px] lg:h-[150px] xl:w-[180px] xl:h-[180px]">
-                        <img src="{{ $item['profile_path']
-                            ? env('TMDB_IMAGE_BASE_URL') . $item['profile_path']
-                            : 'https://ui-avatars.com/api/?name=' . urlencode($item['name']) . '&background=DBDBDB&color=333&rounded=true' }}"
+                        <img loading="lazy"
+                            src="{{ $item['profile_path']
+                                ? env('TMDB_IMAGE_BASE_URL') . $item['profile_path']
+                                : 'https://ui-avatars.com/api/?name=' . urlencode($item['name']) . '&background=DBDBDB&color=333&rounded=true' }}"
                             class="w-full h-full object-cover object-top" alt="Photo {{ $item['name'] }}">
                     </div>
                     <div class="mt-4 leading-tight">
@@ -30,9 +31,10 @@
             @forelse ($trendingCelebrities as $item)
                 <div class="flex gap-5 w-full items-center snap-start flex-shrink-0">
                     <div class="w-[100px] h-[100px] overflow-hidden rounded-2xl">
-                        <img src="{{ $item['profile_path']
-                            ? env('TMDB_IMAGE_BASE_URL') . $item['profile_path']
-                            : 'https://ui-avatars.com/api/?name=' . urlencode($item['name']) . '&background=DBDBDB&color=333&rounded=true' }}"
+                        <img loading="lazy"
+                            src="{{ $item['profile_path']
+                                ? env('TMDB_IMAGE_BASE_URL') . $item['profile_path']
+                                : 'https://ui-avatars.com/api/?name=' . urlencode($item['name']) . '&background=DBDBDB&color=333&rounded=true' }}"
                             class="w-full h-full object-cover object-top" alt="Photo {{ $item['name'] }}">
                     </div>
                     <div>

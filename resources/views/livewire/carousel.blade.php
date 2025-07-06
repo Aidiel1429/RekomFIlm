@@ -13,7 +13,8 @@
         :style="`transform: translateX(-${current * 100}%);`">
 
         @forelse ($carousels as $carousel)
-            <div class="w-full flex-shrink-0 relative bg-center bg-cover h-64 sm:h-80 md:h-96 lg:h-[481px] xl:h-[681px]"
+            <div loading="lazy"
+                class="w-full flex-shrink-0 relative bg-center bg-cover h-64 sm:h-80 md:h-96 lg:h-[481px] xl:h-[681px]"
                 style="background-image: url('{{ env('TMDB_IMAGE_BASE_URL') }}{{ $carousel['backdrop_path'] }}');">
 
                 <div class="absolute inset-0 bg-black/70 bg-dots-pattern"></div>
