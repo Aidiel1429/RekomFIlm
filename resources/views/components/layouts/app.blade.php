@@ -26,13 +26,17 @@
             font-style: normal;
         }
 
-        .custom-scroll {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.7) transparent;
+        /* .scroll-wrapper::-webkit-scrollbar {
+            height: 0px;
+        }
+
+        .scroll-wrapper:hover .custom-scroll::-webkit-scrollbar {
+            height: 8px;
         }
 
         .custom-scroll::-webkit-scrollbar {
-            height: 8px;
+            height: 0px;
+            transition: height 0.3s ease;
         }
 
         .custom-scroll::-webkit-scrollbar-track {
@@ -47,10 +51,15 @@
 
         .custom-scroll::-webkit-scrollbar-thumb:hover {
             background-color: rgba(255, 165, 0, 0.6);
+        } */
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
         }
 
-        .custom-scroll::-webkit-scrollbar-thumb:active {
-            background-color: #FFA500;
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         .bg-dots-pattern {

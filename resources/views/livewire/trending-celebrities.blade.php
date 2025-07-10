@@ -1,8 +1,22 @@
-<div>
-    <h1 class="text-xl font-bold md:text-2xl xl:text-4xl">Trending celebrities</h1>
-    <div class="border border-[#FFA500] w-8 md:w-10 xl:w-14 xl:border-2 xl:mt-1"></div>
+<div x-data="{ scrollEl: null }" x-init="scrollEl = $refs.scrollContainer">
+    <div class="flex justify-between">
+        <div>
+            <h1 class="text-xl font-bold md:text-2xl xl:text-4xl">Popular Celebrity</h1>
+            <div class="border border-[#FFA500] w-8 md:w-10 xl:w-14 xl:border-2 xl:mt-1"></div>
+        </div>
+        <div class="hidden lg:flex items-center gap-2">
+            <button @click="scrollEl.scrollBy({ left: -300, behavior: 'smooth' })"
+                class="h-10 w-10 flex justify-center items-center bg-white/10 rounded-2xl cursor-pointer">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button @click="scrollEl.scrollBy({ left: 300, behavior: 'smooth' })"
+                class="h-10 w-10 flex justify-center items-center bg-white/10 rounded-2xl cursor-pointer">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
 
-    <div class="mt-3 overflow-x-auto custom-scroll snap-x snap-mandatory md:mt-7 lg:hidden">
+    <div x-ref="scrollContainer" class="mt-3 overflow-x-auto scroll-smooth no-scrollbar snap-x snap-mandatory md:mt-7">
         <div class="flex items-end gap-5 min-w-max">
             @forelse ($trendingCelebrities as $item)
                 <div
@@ -26,7 +40,7 @@
         </div>
     </div>
 
-    <div class="hidden max-h-[500px] overflow-y-auto custom-scroll snap-x snap-mandatory mt-7 lg:block">
+    {{-- <div class="hidden max-h-[500px] overflow-y-auto custom-scroll snap-x snap-mandatory mt-7 lg:block">
         <div class="overflow-hidden flex flex-col gap-5 pb-16">
             @forelse ($trendingCelebrities as $item)
                 <div class="flex gap-5 w-full items-center snap-start flex-shrink-0">
@@ -45,5 +59,5 @@
             @empty
             @endforelse
         </div>
-    </div>
+    </div> --}}
 </div>

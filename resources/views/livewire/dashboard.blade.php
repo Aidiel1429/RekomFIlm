@@ -8,7 +8,13 @@
         <div class="mt-5">
             <livewire:now-playing />
         </div>
-        <div class="mt-5 lg:flex lg:gap-5 xl:gap-10 w-full lg:max-h-[500px] lg:overflow-hidden">
+        <div class="mt-5">
+            <livewire:trending-celebrities />
+        </div>
+        <div class="mt-5">
+            <livewire:upcoming />
+        </div>
+        {{-- <div class="mt-5 lg:flex lg:gap-5 xl:gap-10 w-full lg:max-h-[500px] lg:overflow-hidden">
             <div class="hidden lg:block lg:w-2/3">
                 <livewire:upcoming />
             </div>
@@ -18,6 +24,6 @@
             <div class="block lg:hidden lg:w-2/3">
                 <livewire:upcoming />
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>

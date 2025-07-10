@@ -29,7 +29,7 @@
                 </button>
                 <button wire:click="updateFetchMovies('popular')"
                     class="{{ $activeTab === 'popular' ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500]' }} cursor-pointer whitespace-nowrap">
-                    Populer
+                    Popular
                 </button>
             </div>
         </div>

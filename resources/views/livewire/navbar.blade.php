@@ -23,8 +23,9 @@
                     class="{{ request()->routeIs('tv-series') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
                     Tv Series
                 </a>
-                <a href="#" class="text-white hover:text-[#FFA500] transition">
-                    Top Rated
+                <a href="/genres" wire:navigate
+                    class="{{ request()->routeIs('genres') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                    Genres
                 </a>
                 <a href="#" class="text-white hover:text-[#FFA500] transition">
                     Trending
@@ -59,7 +60,10 @@
                 class="{{ request()->routeIs('tv-series') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
                 Tv Series
             </a>
-            <a href="#" class="hover:text-[#FFA500] transition">Top Rated</a>
+            <a href="/genres" wire:navigate
+                class="{{ request()->routeIs('genres') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                Genres
+            </a>
             <a href="#" class="hover:text-[#FFA500] transition">Trending</a>
         </div>
     </div>

@@ -29,7 +29,7 @@
                 </button>
                 <button wire:click="updatefetchTvSeries('popular')"
                     class="{{ $activeTab === 'popular' ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500]' }} cursor-pointer whitespace-nowrap">
-                    Populer
+                    Popular
                 </button>
             </div>
         </div>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="flex items-center justify-between gap-5 mt-5 text-white sm:mt-10 md:justify-end xl:text-lg">
-                <button wire:click="prevPage" wire:loading.attr="disabled" wire:target="prevPage"
+                + <button wire:click="prevPage" wire:loading.attr="disabled" wire:target="prevPage"
                     class="px-4 py-1 bg-yellow-500 text-black rounded cursor-pointer disabled:opacity-50"
                     @disabled($page <= 1)>
                     <p wire:loading.remove wire:target="prevPage">Prev</p>
