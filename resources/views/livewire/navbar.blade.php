@@ -43,13 +43,15 @@
         </div>
     </div>
 
-    <div x-show="isOpenSearch" class="mt-4 md:hidden" x-transition>
+    <div x-show="isOpenSearch" x-transition wire:ignore.self class="mt-4 md:hidden relative z-50">
         <form wire:submit.prevent="search">
-            <div class="relative">
+            <div class="flex w-full">
                 <input wire:model="query" type="text" placeholder="Search..."
-                    class="w-full mt-4 p-2 bg-white text-black rounded-md focus:outline-none">
-                <button type="submit" class="absolute top-6 right-3 text-gray-600 cursor-pointer"><i
-                        class="fa-solid fa-magnifying-glass"></i></button>
+                    class="flex-1 p-3 bg-white text-black rounded-l-md shadow focus:outline-none" />
+                <button type="submit"
+                    class="p-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-r-md shadow focus:outline-none">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
             </div>
         </form>
     </div>
