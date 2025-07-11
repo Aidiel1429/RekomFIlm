@@ -11,8 +11,8 @@
 
         <div class="mt-5 overflow-x-auto custom-scroll snap-x snap-mandatory h-10">
             <div class="flex gap-5 w-max flex-nowrap font-semibold text-lg">
-                <button wire:click="updateFetchGenres('movies')"
-                    class="{{ $activeTab === 'movies' ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500]' }} cursor-pointer whitespace-nowrap">
+                <button wire:click="updateFetchGenres('movie')"
+                    class="{{ $activeTab === 'movie' ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500]' }} cursor-pointer whitespace-nowrap">
                     Movies
                 </button>
                 <button wire:click="updateFetchGenres('tv')"
@@ -22,9 +22,9 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 font-semibold gap-3 mt-5">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 font-semibold gap-3 mt-5 pb-10">
             @forelse ($genres as $item)
-                <a href="#"
+                <a href="{{ url('/genres/' . $activeTab . '/' . $item['name']) }}" wire:navigate
                     class="px-3 py-2 bg-white/30 rounded md:text-lg lg:text-xl lg:px-4 lg:py-3 xl:text-2xl xl:px-5 xl:py-4">{{ $item['name'] }}</a>
             @empty
                 <div class="text-center">

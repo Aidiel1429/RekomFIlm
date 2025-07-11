@@ -27,20 +27,31 @@
                     class="{{ request()->routeIs('genres') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
                     Genres
                 </a>
-                <a href="#" class="text-white hover:text-[#FFA500] transition">
-                    Trending
+                <a href="/celebrities" wire:navigate
+                    class="{{ request()->routeIs('celebrities') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                    Celebrities
                 </a>
             </div>
             <div class="hidden md:block">
-                <input type="text" placeholder="Find a movie..."
-                    class="hidden md:block border-2 border-gray-400 outline-none py-2 px-3 text-white rounded-2xl focus:border-[#FFA500] transition-all w-40 xl:w-60">
+                <form wire:submit.prevent="search" class="relative">
+                    <input wire:model="query" type="text" placeholder="Search..."
+                        class="hidden md:block border-2 border-gray-400 outline-none py-2 px-3 text-white rounded-2xl focus:border-[#FFA500] transition-all w-40 xl:w-60">
+                    <button type="submit" class="absolute top-3 right-3 cursor-pointer"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+                    </f>
             </div>
         </div>
     </div>
 
     <div x-show="isOpenSearch" class="mt-4 md:hidden" x-transition>
-        <input type="text" placeholder="Find a movie..."
-            class="w-full mt-4 p-2 bg-white text-black rounded-md focus:outline-none">
+        <form wire:submit.prevent="search">
+            <div class="relative">
+                <input wire:model="query" type="text" placeholder="Search..."
+                    class="w-full mt-4 p-2 bg-white text-black rounded-md focus:outline-none">
+                <button type="submit" class="absolute top-6 right-3 text-gray-600 cursor-pointer"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </form>
     </div>
 
     <div class="fixed top-0 right-0 w-full h-full bg-black text-white z-50 md:hidden" x-show="isOpenMenu"
@@ -64,7 +75,10 @@
                 class="{{ request()->routeIs('genres') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
                 Genres
             </a>
-            <a href="#" class="hover:text-[#FFA500] transition">Trending</a>
+            <a href="/celebrities" wire:navigate
+                class="{{ request()->routeIs('celebrities') ? 'text-[#FFA500]' : 'text-white hover:text-[#FFA500] transition' }}">
+                Celebrities
+            </a>
         </div>
     </div>
 </div>

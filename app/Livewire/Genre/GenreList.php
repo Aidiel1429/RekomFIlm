@@ -8,9 +8,9 @@ use Livewire\Component;
 
 class GenreList extends Component
 {
-    public $genres = [], $activeTab = 'movies';
+    public $genres = [], $activeTab = 'movie';
     public $endpoint = [
-        'movies' => '/genre/movie/list',
+        'movie' => '/genre/movie/list',
         'tv' => '/genre/tv/list',
     ];
 

@@ -37,12 +37,13 @@
                             {{ \Carbon\Carbon::parse($carousel['release_date'])->format('M d, Y') }}
                         </p>
                     </div>
-                    <div class="mt-2">
+                    <a href="/movie/{{ $carousel['id'] }}/{{ \Illuminate\Support\Str::slug($carousel['title']) }}"
+                        wire:navigate class="mt-2">
                         <button
                             class="bg-white/20 px-3 py-2 rounded-2xl text-sm font-semibold text-white cursor-pointer md:text-lg xl:text-2xl xl:px-5">
                             View Details
                         </button>
-                    </div>
+                    </a>
                 </div>
             </div>
         @empty

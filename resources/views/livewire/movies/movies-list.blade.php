@@ -37,20 +37,26 @@
         <div class="mt-7">
             <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-3 gap-y-5">
                 @forelse ($movies as $item)
-                    <div class="w-full">
-                        <div class="w-full aspect-[2/3] overflow-hidden rounded">
-                            <img loading="lazy" src="{{ env('TMDB_IMAGE_BASE_URL') }}{{ $item['poster_path'] }}"
-                                alt="Poster {{ $item['title'] }}"
-                                class="w-full h-full object-cover object-top transition-all duration-300"
-                                wire:loading.class="blur-sm opacity-70"
-                                wire:target="updateFetchMovies,prevPage,nextPage" />
+                    <a href="/movie/{{ $item['id'] }}/{{ \Illuminate\Support\Str::slug($item['title']) }}"
+                        wire:navigate>
+                        <div class="w-full rounded hover:bg-white/5 transition-all">
+                            <div class="w-full aspect-[2/3] overflow-hidden rounded">
+                                <img loading="lazy"
+                                    src="{{ $item['poster_path']
+                                        ? env('TMDB_IMAGE_BASE_URL') . $item['poster_path']
+                                        : 'https://placehold.co/300x450?text=No+Image' }}"
+                                    alt="Poster {{ $item['title'] }}"
+                                    class="w-full h-full object-cover object-top transition-all duration-300"
+                                    wire:loading.class="blur-sm opacity-70"
+                                    wire:target="updateFetchMovies,prevPage,nextPage" />
+                            </div>
+                            <div class="mt-2 p-2">
+                                <h1 class="truncate text-white font-bold lg:text-xl">{{ $item['title'] }}</h1>
+                                <p class="text-xs lg:text-base">
+                                    {{ \Carbon\Carbon::parse($item['release_date'])->format('Y') }}</p>
+                            </div>
                         </div>
-                        <div class="mt-2">
-                            <h1 class="truncate text-white font-bold lg:text-xl">{{ $item['title'] }}</h1>
-                            <p class="text-xs lg:text-base">
-                                {{ \Carbon\Carbon::parse($item['release_date'])->format('Y') }}</p>
-                        </div>
-                    </div>
+                    </a>
                 @empty
                     <div class="w-full text-center text-white">No movies found</div>
                 @endforelse
@@ -64,7 +70,7 @@
                     <span wire:loading wire:target="prevPage" class="loading loading-spinner loading-md"></span>
                 </button>
 
-                <span class="text-sm">Page {{ $page }} of {{ $totalPages }}</span>
+                <span class="text-sm">Page {{ number_format($page) }} of {{ number_format($totalPages) }}</span>
 
                 <button wire:click="nextPage" wire:loading.attr="disabled" wire:target="nextPage"
                     class="px-4 py-1 bg-yellow-500 text-black rounded cursor-pointer disabled:opacity-50"
