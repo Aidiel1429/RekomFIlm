@@ -1,8 +1,8 @@
 # 🎬 Sceneza
 
-![GitHub Repo stars](https://img.shields.io/github/stars/username/sceneza?style=social)
-![GitHub forks](https://img.shields.io/github/forks/username/sceneza?style=social)
-![GitHub license](https://img.shields.io/github/license/username/sceneza)
+![GitHub Repo stars](https://img.shields.io/github/stars/Aidiel1429/RekomFilm?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Aidiel1429/RekomFilm?style=social)
+![GitHub license](https://img.shields.io/github/license/Aidiel1429/RekomFilm)
 
 **Sceneza** adalah website rekomendasi film dan serial TV yang menyajikan informasi terkini, populer, dan trending. Data diambil langsung dari **API resmi TMDb (The Movie Database)** dan ditampilkan dengan antarmuka modern menggunakan **Laravel** dan **Livewire**.
 
